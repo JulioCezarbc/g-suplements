@@ -2,29 +2,28 @@
 <template>
   <div>
     <!-- Header Fixo -->
-    <header class="fixed top-0 left-0 right-0 bg-black/95 backdrop-blur-md text-white z-50 border-b border-red-500/20">
+    <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md text-black z-50 border-b border-green-500/20">
       <nav class="container mx-auto px-4 py-4">
         <div class="flex justify-between items-center">
           <div class="flex items-center space-x-3">
-            <div class="w-10 h-10 bg-gradient-to-r from-red-500 to-red-600 rounded-lg flex items-center justify-center font-bold text-xl">
-              G
+            <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center font-bold text-xl border border-gray-200">
+              <span class="text-black">G</span><span class="text-green-500">W</span>
             </div>
-            <h1 class="text-2xl font-bold text-red-500">G-Suplements</h1>
+            <h1 class="text-2xl font-bold"><span class="text-black">GW</span> <span class="text-green-500">Fit Store</span></h1>
           </div>
           
           <!-- Menu Desktop -->
           <ul class="hidden lg:flex space-x-8 font-medium">
-            <li><a href="#inicio" class="hover:text-red-400 transition-colors">Início</a></li>
-            <li><a href="#beneficios" class="hover:text-red-400 transition-colors">Benefícios</a></li>
-            <li><a href="#produtos" class="hover:text-red-400 transition-colors">Produtos</a></li>
-            <li><a href="#depoimentos" class="hover:text-red-400 transition-colors">Depoimentos</a></li>
-            <li><a href="#garantia" class="hover:text-red-400 transition-colors">Garantia</a></li>
+            <li><a href="#inicio" class="text-black hover:text-green-500 transition-colors">Início</a></li>
+            <li><a href="#beneficios" class="text-black hover:text-green-500 transition-colors">Benefícios</a></li>
+            <li><a href="#produtos" class="text-black hover:text-green-500 transition-colors">Produtos</a></li>
+            <li><a href="#depoimentos" class="text-black hover:text-green-500 transition-colors">Depoimentos</a></li>
+            <li><a href="#garantia" class="text-black hover:text-green-500 transition-colors">Garantia</a></li>
           </ul>
           
-          <button class="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 px-6 py-2 rounded-lg font-semibold text-sm transition-all transform hover:scale-105">
-            Comprar Agora
-          </button>
-          
+          <a href="https://wa.me/5586999313062?text=Olá! Gostaria de mais informações sobre os suplementos." class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg font-semibold text-sm 
+          transition-all transform hover:scale-105" target="_blank">Comprar Agora</a>
+
           <!-- Botão Menu Mobile -->
           <button @click="toggleMobileMenu" class="lg:hidden">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -36,11 +35,11 @@
         <!-- Menu Mobile -->
         <div v-show="mobileMenuOpen" class="lg:hidden mt-4 pb-4 border-t border-gray-700">
           <ul class="space-y-3 mt-4">
-            <li><a href="#inicio" class="block hover:text-red-400" @click="closeMobileMenu">Início</a></li>
-            <li><a href="#beneficios" class="block hover:text-red-400" @click="closeMobileMenu">Benefícios</a></li>
-            <li><a href="#produtos" class="block hover:text-red-400" @click="closeMobileMenu">Produtos</a></li>
-            <li><a href="#depoimentos" class="block hover:text-red-400" @click="closeMobileMenu">Depoimentos</a></li>
-            <li><a href="#garantia" class="block hover:text-red-400" @click="closeMobileMenu">Garantia</a></li>
+            <li><a href="#inicio" class="block hover:text-green-500" @click="closeMobileMenu">Início</a></li>
+            <li><a href="#beneficios" class="block hover:text-green-500" @click="closeMobileMenu">Benefícios</a></li>
+            <li><a href="#produtos" class="block hover:text-green-500" @click="closeMobileMenu">Produtos</a></li>
+            <li><a href="#depoimentos" class="block hover:text-green-500" @click="closeMobileMenu">Depoimentos</a></li>
+            <li><a href="#garantia" class="block hover:text-green-500" @click="closeMobileMenu">Garantia</a></li>
           </ul>
         </div>
       </nav>
@@ -48,7 +47,7 @@
 
     <main>
       <!-- Hero Section -->
-      <section id="inicio" class="relative min-h-screen bg-gradient-to-br from-black via-gray-900 to-red-900/20 text-white flex items-center overflow-hidden">
+      <section id="inicio" class="relative min-h-screen bg-gradient-to-br from-black via-gray-900 to-green-900/20 text-white flex items-center overflow-hidden">
         <div class="absolute inset-0 bg-black/50"></div>
         <div class="absolute inset-0 bg-[url('/api/placeholder/1920/1080')] bg-cover bg-center opacity-30"></div>
         
@@ -73,8 +72,8 @@
                 <button @click="scrollToProducts" class="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 px-8 py-4 rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-2xl">
                   🔥 GARANTA O SEU AGORA
                 </button>
-                <button class="border-2 border-white hover:bg-white hover:text-black px-8 py-4 rounded-xl font-bold text-lg transition-all">
-                  Ver Produtos
+                <button @click="scrollToTestimonials" class="bg-white text-black hover:bg-gray-100 px-8 py-4 rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-lg">
+                  Ver Depoimentos
                 </button>
               </div>
               
@@ -86,7 +85,6 @@
                     <img src="/api/placeholder/32/32" alt="Cliente satisfeito" class="w-8 h-8 rounded-full border-2 border-white">
                     <img src="/api/placeholder/32/32" alt="Cliente satisfeito" class="w-8 h-8 rounded-full border-2 border-white"> -->
                   </div>
-                  <span class="text-gray-300">+50.000 clientes satisfeitos</span>
                 </div>
                 <div class="flex items-center space-x-1">
                   <div class="flex text-yellow-400">
@@ -114,7 +112,7 @@
         <div class="container mx-auto px-4">
           <div class="text-center mb-16">
             <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
-              Por que Escolher a G-Suplements?
+              Por que Escolher a GW Fit Store?
             </h2>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
               Somos a marca de suplementos mais confiável do Brasil, com produtos de alta qualidade e resultados comprovados
@@ -220,9 +218,6 @@
           </div>
           
           <div class="text-center mt-12">
-            <button class="bg-white text-black hover:bg-gray-100 px-8 py-4 rounded-xl font-bold text-lg transition-all transform hover:scale-105">
-              Ver Todos os Produtos
-            </button>
           </div>
         </div>
       </section>
@@ -244,9 +239,6 @@
               </div>
               <p class="text-gray-700 mb-6 italic">"{{ testimonial.comment }}"</p>
               <div class="flex items-center space-x-4">
-                <!-- <img :src="testimonial.photo" 
-                     :alt="`Foto do cliente ${testimonial.name}`"
-                     class="w-16 h-16 rounded-full object-cover"> -->
                 <div>
                   <h4 class="font-bold text-gray-800">{{ testimonial.name }}</h4>
                   <p class="text-gray-500 text-sm">{{ testimonial.location }}</p>
@@ -354,7 +346,7 @@
                 </svg>
               </div>
               <h3 class="font-bold text-xl mb-2">WhatsApp</h3>
-              <p class="text-gray-300 mb-4">(11) 99999-9999</p>
+              <p class="text-gray-300 mb-4">+55 (86) 999313062</p>
               <p class="text-sm text-gray-400">Resposta em até 5 minutos</p>
             </div>
             
@@ -365,7 +357,7 @@
                 </svg>
               </div>
               <h3 class="font-bold text-xl mb-2">E-mail</h3>
-              <p class="text-gray-300 mb-4">contato@g-suplements.com</p>
+              <p class="text-gray-300 mb-4">contato@gwfitstore.com</p>
               <p class="text-sm text-gray-400">Resposta em até 2 horas</p>
             </div>
             
@@ -393,7 +385,7 @@
       </section>
 
       <!-- CTA Final -->
-      <section class="py-20 bg-gradient-to-r from-red-600 to-red-700 text-white">
+      <section class="py-20 bg-gradient-to-r from-green-600 to-green-700 text-white">
         <div class="container mx-auto px-4 text-center">
           <div class="max-w-4xl mx-auto">
             <h2 class="text-4xl lg:text-6xl font-bold mb-6">
@@ -427,36 +419,34 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-black text-white py-16">
+    <footer class="bg-white text-black py-16">
       <div class="container mx-auto px-4">
-        <div class="grid md:grid-cols-4 gap-8">
-          <div>
-            <div class="flex items-center space-x-3 mb-6">
-              <div class="w-12 h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-lg flex items-center justify-center font-bold text-xl">
-                G
-              </div>
-              <h3 class="text-2xl font-bold">G-Suplements</h3>
-            </div>
-            <p class="text-gray-400 mb-6">
-              Os melhores suplementos alimentares do Brasil. Qualidade premium, 
-              resultados garantidos e preços imbatíveis.
-            </p>
-            <div class="flex space-x-4">
-              <a href="https://instagram.com/g_suplements" target="_blank" rel="noopener" 
-                 class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
-                <span class="text-sm">📷</span>
-              </a>
-              <a href="https://facebook.com/g.suplements" target="_blank" rel="noopener"
-                 class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
-                <span class="text-sm">f</span>
-              </a>
-              <a href="https://wa.me/5511999999999" target="_blank" rel="noopener"
-                 class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
-                <span class="text-sm">💬</span>
-              </a>
-            </div>
+        <div class="flex items-center space-x-3 mb-6">
+          <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center font-bold text-xl border border-gray-200">
+            <span class="text-black">G</span><span class="text-green-500">W</span>
           </div>
-          
+          <h3 class="text-2xl font-bold"><span class="text-black">GW</span> <span class="text-green-500">Fit Store</span></h3>
+        </div>
+        <p class="text-gray-400 mb-6">
+          Os melhores suplementos alimentares do Brasil. Qualidade premium, 
+          resultados garantidos e preços imbatíveis.
+        </p>
+        <div class="flex space-x-4 mb-8">
+          <a href="https://instagram.com/g_suplements" target="_blank" rel="noopener" 
+             class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
+            <span class="text-sm">📷</span>
+          </a>
+          <a href="https://facebook.com/g.suplements" target="_blank" rel="noopener"
+             class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
+            <span class="text-sm">f</span>
+          </a>
+          <a href="https://wa.me/5511999999999" target="_blank" rel="noopener"
+             class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
+            <span class="text-sm">💬</span>
+          </a>
+        </div>
+        
+        <div class="grid md:grid-cols-4 gap-8">
           <div>
             <h4 class="text-lg font-bold mb-6">Produtos</h4>
             <ul class="space-y-3 text-gray-400">
@@ -498,29 +488,9 @@
           <div>
             <h4 class="font-bold text-lg mb-4">Informações Legais</h4>
             <div class="text-gray-400 text-sm space-y-2">
-              <p><strong>G-Suplements Comércio de Suplementos LTDA</strong></p>
-              <p>CNPJ: 12.345.678/0001-90</p>
-              <p>Endereço: Rua dos Suplementos, 123 - São Paulo/SP</p>
-              <p>CEP: 01234-567</p>
-              <p>Telefone: (11) 99999-9999</p>
-              <p>E-mail: contato@g-suplements.com.br</p>
-            </div>
-          </div>
-          
-          <div>
-            <h4 class="font-bold text-lg mb-4">Formas de Pagamento</h4>
-            <div class="flex flex-wrap gap-3 mb-6">
-              <div class="bg-gray-800 px-3 py-2 rounded text-xs">💳 Cartão de Crédito</div>
-              <div class="bg-gray-800 px-3 py-2 rounded text-xs">💰 PIX</div>
-              <div class="bg-gray-800 px-3 py-2 rounded text-xs">📱 PicPay</div>
-              <div class="bg-gray-800 px-3 py-2 rounded text-xs">🏦 Boleto</div>
-            </div>
-            
-            <h4 class="font-bold text-lg mb-4">Certificações</h4>
-            <div class="flex space-x-4">
-              <div class="bg-gray-800 px-4 py-2 rounded text-xs">✅ ANVISA</div>
-              <div class="bg-gray-800 px-4 py-2 rounded text-xs">🔒 SSL</div>
-              <div class="bg-gray-800 px-4 py-2 rounded text-xs">⭐ ISO 9001</div>
+              <p><strong>GW Fit Store</strong></p>
+              <p>Telefone: +55 (86) 99313-062</p>
+              <p>E-mail: contato@gwfitstore.com.br</p>
             </div>
           </div>
         </div>
@@ -528,7 +498,7 @@
         <hr class="border-gray-800 my-8">
         
         <div class="flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
-          <p>© 2025 G-Suplements. Todos os direitos reservados.</p>
+          <p>© 2025 GW Fit Store. Todos os direitos reservados.</p>
           <p class="mt-2 md:mt-0">
             Desenvolvido com ❤️ para transformar vidas através do fitness
           </p>
@@ -537,7 +507,7 @@
     </footer>
 
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de mais informações sobre os suplementos."
+    <a href="https://wa.me/5586999313062?text=Olá! Gostaria de mais informações sobre os suplementos."
        target="_blank" rel="noopener"
        class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-2xl z-50 transition-all transform hover:scale-110">
       <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -550,27 +520,17 @@
 <script setup>
 // SEO Configuration
 useHead({
-  title: 'G-Suplements | Suplementos de Alta Performance para Corpo e Mente | Compre Online',
+  title: 'GW Fit Store | Suplementos de Alta Performance para Corpo e Mente | Compre Online',
   meta: [
-    { name: 'description', content: 'Compre suplementos da G-Suplements e alcance seus resultados com qualidade e segurança. Whey Protein, Creatina, Pré-treino e muito mais. Frete grátis para todo Brasil!' },
-    { name: 'keywords', content: 'suplementos alimentares, comprar suplementos online, whey protein, creatina, G-Suplements, suplementos brasil, loja suplementos, proteína, termogênico, pré-treino' },
-    { name: 'robots', content: 'index, follow' },
-    { name: 'author', content: 'G-Suplements' },
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-    { property: 'og:title', content: 'G-Suplements | Os Melhores Suplementos do Brasil' },
-    { property: 'og:description', content: 'Transforme seu corpo com suplementos de alta qualidade. Whey Protein, Creatina e muito mais com frete grátis!' },
-    { property: 'og:type', content: 'website' },
-    { property: 'og:url', content: 'https://g-suplements.com.br' },
-    { property: 'og:image', content: '/g-suplements-og-image.jpg' },
-    { property: 'og:site_name', content: 'G-Suplements' },
-    { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:title', content: 'G-Suplements | Suplementos de Alta Performance' },
-    { name: 'twitter:description', content: 'Os melhores suplementos do Brasil com frete grátis e garantia de qualidade.' },
-    { name: 'twitter:image', content: '/g-suplements-twitter-image.jpg' }
+    { name: 'description', content: 'Compre suplementos da GW Fit Store e alcance seus resultados com qualidade e segurança. Whey Protein, Creatina, Pré-treino e muito mais. Frete grátis para todo Brasil!' },
+    { name: 'keywords', content: 'suplementos alimentares, comprar suplementos online, whey protein, creatina, GW Fit Store, suplementos brasil, loja suplementos, proteína, termogênico, pré-treino' },
+    { name: 'author', content: 'GW Fit Store' },
+    { property: 'og:title', content: 'GW Fit Store | Os Melhores Suplementos do Brasil' },
+    { property: 'og:site_name', content: 'GW Fit Store' },
+    { name: 'twitter:title', content: 'GW Fit Store | Suplementos de Alta Performance' },
   ],
   link: [
-    { rel: 'canonical', href: 'https://g-suplements.com.br' },
-    { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    { rel: 'canonical', href: 'https://gwfitstore.com.br' },
   ]
 });
 
@@ -691,7 +651,7 @@ const testimonials = ref([
     name: "Marina Santos",
     location: "Rio de Janeiro, RJ",
     result: "Ganhou 8kg de massa magra",
-    comment: "Uso os suplementos da G-Suplements há 6 meses e nunca vi resultados tão rápidos. A creatina é pura e o atendimento é excepcional!",
+    comment: "Uso os suplementos da GW Fit Store há 6 meses e nunca vi resultados tão rápidos. A creatina é pura e o atendimento é excepcional!",
     photo: "/api/placeholder/80/80"
   },
   {
@@ -742,6 +702,10 @@ const closeMobileMenu = () => {
 
 const scrollToProducts = () => {
   const element = document.getElementById('produtos');
+  element?.scrollIntoView({ behavior: 'smooth' });
+};
+const scrollToTestimonials = () => {
+  const element = document.getElementById('depoimentos');
   element?.scrollIntoView({ behavior: 'smooth' });
 };
 
